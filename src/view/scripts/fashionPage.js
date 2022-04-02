@@ -85,7 +85,7 @@ const appendData = async (products) => {
       try {
         let user = await disPlayName();
         if (!user.name) {
-          window.location.href = "../view/qrsign.html";
+          window.location.href = "/qrsign.html";
         } else {
           let user = await disPlayName();
           let productCart = {
@@ -102,7 +102,7 @@ const appendData = async (products) => {
           });
           let data = await res.json();
           // console.log(data);
-          window.location.href = "../view/cartPage.html";
+          window.location.href = "/cartPage.html";
         }
       } catch (error) {
         console.log(error.message);

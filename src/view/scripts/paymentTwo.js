@@ -120,7 +120,7 @@ const payment = async () => {
       });
       btn.textContent = "Processing....";
       setTimeout(() => {
-        window.location.href = "../view/review.html";
+        window.location.href = "/review.html";
       }, 3000);
     } catch (error) {
       console.log(error);

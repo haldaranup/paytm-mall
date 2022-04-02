@@ -104,7 +104,7 @@ const getusedId = async () => {
     console.log("token", subArr);
     if (subArr == undefined) {
       alert("please log in");
-      window.location.href = "../view/qrsign.html";
+      window.location.href = "/qrsign.html";
     } else {
       let res = await fetch("https://paytm-mall-clone.herokuapp.com/user", {
         method: "POST",
@@ -153,9 +153,9 @@ async function removeItem(pid) {
     );
     let dataOne = await response.json();
     if (!dataOne._id) {
-      window.location.href = "../view/qrsign.html";
+      window.location.href = "/qrsign.html";
     } else {
-      window.location.href = "../view/cartPage.html";
+      window.location.href = "/cartPage.html";
     }
   } catch (error) {
     console.log(error.message);
@@ -163,5 +163,5 @@ async function removeItem(pid) {
 }
 
 document.getElementById("pay").addEventListener("click", () => {
-  window.location.href = "../view/address.html";
+  window.location.href = "/address.html";
 });

@@ -100,6 +100,6 @@ async function shipping(event) {
       console.log(error);
     }
 
-    window.location.href = "../view/paymentTwo.html";
+    window.location.href = "/paymentTwo.html";
   }
 }
