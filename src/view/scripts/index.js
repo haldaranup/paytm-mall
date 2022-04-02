@@ -12,7 +12,7 @@ const fetchData = async (url) => {
 
 const appendData = async (parent, start, end) => {
   try {
-    let url = "http://localhost:5901/couponHome";
+    let url = "https://paytm-mall-clone.herokuapp.com/couponHome";
     let data = await fetchData(url);
     for (let i = start; i <= end; i++) {
       let div = document.createElement("div");
@@ -56,7 +56,7 @@ appendData(carouseSix, 50, 59);
 
 const appendDataSpecial = async (parent, start, end) => {
   try {
-    let url = "http://localhost:5901/couponHome";
+    let url = "https://paytm-mall-clone.herokuapp.com/couponHome";
     let data = await fetchData(url);
     for (let i = start; i <= end; i++) {
       let div = document.createElement("div");

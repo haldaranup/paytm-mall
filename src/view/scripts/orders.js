@@ -16,7 +16,7 @@ const cookies = (name) => {
 const findUserId = async () => {
   let subArr = cookies("token");
   // console.log("token", subArr)
-  let res = await fetch("http://localhost:5901/user", {
+  let res = await fetch("https://paytm-mall-clone.herokuapp.com/user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -73,7 +73,7 @@ const appendProduct = async (Data) => {
     let container = document.querySelector("#shopping");
     console.log(Data);
     let response1 = await fetch(
-      `http://localhost:5901/userAddress?q=${Data._id}`
+      `https://paytm-mall-clone.herokuapp.com/userAddress?q=${Data._id}`
     );
     let address = await response1.json();
     console.log(address);
@@ -148,12 +148,12 @@ const appendProduct = async (Data) => {
 const fetchCoupon = async (id) => {
   try {
     // console.log(id);
-    let res = await fetch(`http://localhost:5901/userBuyCoupon/${id}`);
+    let res = await fetch(`https://paytm-mall-clone.herokuapp.com/userBuyCoupon/${id}`);
     let data = await res.json();
     document.querySelector("#deal").textContent = "";
     data.forEach(async (el) => {
       let coupon = el.couponId;
-      let response = await fetch(`http://localhost:5901/coupon?q=${coupon}`);
+      let response = await fetch(`https://paytm-mall-clone.herokuapp.com/coupon?q=${coupon}`);
       let Data = await response.json();
       appendCoupon(Data);
     });
@@ -164,13 +164,13 @@ const fetchCoupon = async (id) => {
 };
 const fetchUserProduct = async (id) => {
   try {
-    let res = await fetch(`http://localhost:5901/userBuyProduct/${id}`);
+    let res = await fetch(`https://paytm-mall-clone.herokuapp.com/userBuyProduct/${id}`);
     let data = await res.json();
     // console.log(data);
     document.querySelector("#shopping").textContent = "";
     data.forEach(async (el) => {
       let product = el.productId;
-      let response = await fetch(`http://localhost:5901/fashion?q=${product}`);
+      let response = await fetch(`https://paytm-mall-clone.herokuapp.com/fashion?q=${product}`);
       let Data = await response.json();
 
       appendProduct(Data);

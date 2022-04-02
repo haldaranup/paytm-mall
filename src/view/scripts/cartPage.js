@@ -34,7 +34,7 @@ const cookies = (name) => {
 
 const appendData = async (id) => {
   console.log("id", id);
-  let data = await fetchData(`http://localhost:5901/fashion?q=${id}`);
+  let data = await fetchData(`https://paytm-mall-clone.herokuapp.com/fashion?q=${id}`);
   console.log(data);
 
   let main_div = document.createElement("div");
@@ -86,7 +86,7 @@ const appendData = async (id) => {
 // ****************** fetch all user product**************************/
 const fetchUserProducts = async (id) => {
   try {
-    let res = await fetchData(`http://localhost:5901/userCartProduct/${id}`);
+    let res = await fetchData(`https://paytm-mall-clone.herokuapp.com/userCartProduct/${id}`);
     console.log(res);
     res.map((el) => {
       //   console.log(el.productId);
@@ -106,7 +106,7 @@ const getusedId = async () => {
       alert("please log in");
       window.location.href = "../view/qrsign.html";
     } else {
-      let res = await fetch("http://localhost:5901/user", {
+      let res = await fetch("https://paytm-mall-clone.herokuapp.com/user", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -129,7 +129,7 @@ async function removeItem(pid) {
     // finding user id
     let subArr = cookies("token");
     // console.log("token", subArr)
-    let res = await fetch("http://localhost:5901/user", {
+    let res = await fetch("https://paytm-mall-clone.herokuapp.com/user", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -143,7 +143,7 @@ async function removeItem(pid) {
     console.log(uid, pid);
 
     let response = await fetch(
-      `http://localhost:5901/userCartProduct?p=${pid}&u=${uid}`,
+      `https://paytm-mall-clone.herokuapp.com/userCartProduct?p=${pid}&u=${uid}`,
       {
         method: "DELETE",
         headers: {
@@ -153,7 +153,7 @@ async function removeItem(pid) {
     );
     let dataOne = await response.json();
     if (!dataOne._id) {
-      window.location.href = "/qrsign.html";
+      window.location.href = "../view/qrsign.html";
     } else {
       window.location.href = "../view/cartPage.html";
     }

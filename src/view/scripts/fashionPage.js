@@ -13,7 +13,7 @@ const fetchData = async (url) => {
 const cookies = (name) => {
   // console.log(name);
   let tokenArr = document.cookie.split(";");
-  // console.log(tokenArr);
+  console.log(tokenArr);
   for (let i = 0; i < tokenArr.length; i++) {
     let subArr = tokenArr[i].split("=");
     // console.log(subArr[0]);
@@ -28,7 +28,7 @@ const cookies = (name) => {
 const disPlayName = async () => {
   let subArr = cookies("token");
   console.log("token", subArr);
-  let res = await fetch("http://localhost:5901/user", {
+  let res = await fetch("https://paytm-mall-clone.herokuapp.com/user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -93,7 +93,7 @@ const appendData = async (products) => {
             productId: el._id,
           };
           productCart = JSON.stringify(productCart);
-          let res = await fetch("http://localhost:5901/userCartProduct", {
+          let res = await fetch("https://paytm-mall-clone.herokuapp.com/userCartProduct", {
             method: "POST",
             body: productCart,
             headers: {
@@ -121,7 +121,7 @@ const callAppend = async () => {
   try {
     let itemName = cookies("fashion");
     // console.log("fashion", itemName);
-    let products = await fetchData(`http://localhost:5901/fashion/${itemName}`);
+    let products = await fetchData(`https://paytm-mall-clone.herokuapp.com/fashion/${itemName}`);
     // console.log("products", products);
     appendData(products);
   } catch (error) {
@@ -133,7 +133,7 @@ callAppend();
 const sort = async () => {
   let itemName = cookies("fashion");
   let fashionData = await fetchData(
-    `http://localhost:5901/fashion/${itemName}`
+    `https://paytm-mall-clone.herokuapp.com/fashion/${itemName}`
   );
   let sortValue = document.getElementById("select").value;
   console.log(sortValue);
@@ -168,8 +168,9 @@ const sort = async () => {
 
 const filter = async () => {
   let itemName = cookies("fashion");
+  // console.log(itemName)
   let fashionData = await fetchData(
-    `http://localhost:5901/fashion/${itemName}`
+    `https://paytm-mall-clone.herokuapp.com/fashion/${itemName}`
   );
   let sortValue = document.getElementById("select").value;
   let filterValue = document.getElementById("brand").value;

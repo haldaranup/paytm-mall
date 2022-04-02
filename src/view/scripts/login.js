@@ -8,7 +8,7 @@ const login = async () => {
 
     let user_data_json = JSON.stringify(user_data);
 
-    let res = await fetch("http://localhost:5901/login", {
+    let res = await fetch("https://paytm-mall-clone.herokuapp.com/login", {
       method: "POST",
       body: user_data_json,
       headers: {

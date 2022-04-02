@@ -19,7 +19,7 @@ const cookies = (name) => {
 const disPlayName = async () => {
   let subArr = cookies("token");
   //   console.log("token", subArr);
-  let res = await fetch("http://localhost:5901/user", {
+  let res = await fetch("https://paytm-mall-clone.herokuapp.com/user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -54,7 +54,7 @@ const payment = async () => {
   btn.addEventListener("click", async () => {
     try {
       productDetails = JSON.stringify(productDetails);
-      let res = await fetch("http://localhost:5901/userBuyCoupon", {
+      let res = await fetch("https://paytm-mall-clone.herokuapp.com/userBuyCoupon", {
         method: "POST",
         body: productDetails,
         headers: {

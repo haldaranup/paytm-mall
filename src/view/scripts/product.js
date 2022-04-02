@@ -14,7 +14,7 @@ const cookies = (name) => {
 
 const fetchData = async (productName) => {
   try {
-    let res = await fetch(`http://localhost:5901/coupon/${productName}`);
+    let res = await fetch(`https://paytm-mall-clone.herokuapp.com/coupon/${productName}`);
     let data = await res.json();
     return data;
   } catch (error) {

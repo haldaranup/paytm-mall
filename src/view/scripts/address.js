@@ -33,7 +33,7 @@ const fetchData = async (url) => {
 const disPlayName = async () => {
   let subArr = cookies("token");
   //   console.log("token", subArr);
-  let res = await fetch("http://localhost:5901/user", {
+  let res = await fetch("https://paytm-mall-clone.herokuapp.com/user", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -69,7 +69,7 @@ async function shipping(event) {
       let data = await disPlayName();
       let id = data.id;
       //********* */
-      let res = await fetchData(`http://localhost:5901/userCartProduct/${id}`);
+      let res = await fetchData(`https://paytm-mall-clone.herokuapp.com/userCartProduct/${id}`);
       //   console.log(res);
       res.map(async (el) => {
         try {
@@ -83,7 +83,7 @@ async function shipping(event) {
             mobile_no: num,
           };
           userAddress = JSON.stringify(userAddress);
-          let res = await fetch("http://localhost:5901/userAddress", {
+          let res = await fetch("https://paytm-mall-clone.herokuapp.com/userAddress", {
             method: "POST",
             body: userAddress,
             headers: {

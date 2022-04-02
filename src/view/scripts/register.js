@@ -15,7 +15,7 @@ const signin = async (event) => {
     ) {
       user_data = JSON.stringify(user_data);
 
-      let res = await fetch("http://localhost:5901/register", {
+      let res = await fetch("https://paytm-mall-clone.herokuapp.com/register", {
         method: "POST",
         body: user_data,
         headers: {

@@ -314,7 +314,7 @@
             userName.textContent = "Login/SignUp"
         }
         else {
-            let res = await fetch("http://localhost:5901/user", {
+            let res = await fetch("https://paytm-mall-clone.herokuapp.com/user", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -362,7 +362,7 @@
     fashion.forEach(el => {
         el.addEventListener("click", () => {
             let value = el.ariaValueText
-            console.log(value)
+            console.log(value, "sagar")
             // localStorage.setItem("fashionValue", JSON.stringify(value))
             document.cookie = "fashion=" + value
             window.location.href = "fashionPage.html"
@@ -376,5 +376,3 @@
 </script>
 
 <script src="scripts/index.js"></script>
-<!-- <script src="scripts/navDisplay.js"></script> -->
-<script src="scripts/pushdata.js"></script>

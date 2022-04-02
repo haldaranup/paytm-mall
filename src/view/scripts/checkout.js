@@ -56,7 +56,7 @@ const goTo = () => {
 async function totalPrice() {
   let quantity = document.querySelector("#quantity").value || "1";
 
-  let data = await fetchData(`http://localhost:5901/coupon?q=${productId}`);
+  let data = await fetchData(`https://paytm-mall-clone.herokuapp.com/coupon?q=${productId}`);
 
   document.querySelector("#total").textContent = quantity * data.price;
   //   localStorage.setItem("price", JSON.stringify(selected * price));
@@ -67,7 +67,7 @@ async function totalPrice() {
 //************** go to payment page**************** */
 const appendData = async () => {
   alert("please choose  quantity");
-  let data = await fetchData(`http://localhost:5901/coupon?q=${productId}`);
+  let data = await fetchData(`https://paytm-mall-clone.herokuapp.com/coupon?q=${productId}`);
   document.getElementById("name").textContent = `${data.name} Gift Cards`;
 
   // image
