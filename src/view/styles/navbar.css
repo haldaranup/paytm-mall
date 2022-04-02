@@ -1,0 +1,226 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Roboto, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI", sans-serif;
+
+}
+
+.none {
+    display: none;
+    width: 20px;
+    position: fixed;
+    right: 3%;
+    top: 5%;
+    z-index: 100;
+}
+
+/* <div class="topNavStyle"></div> */
+
+/* navbar starts here  */
+.topNavStyle {
+    height: 4vh;
+    width: 100%;
+    background-color: #f4f4f4;
+}
+
+
+#mainLogo {
+    width: 10%;
+    margin: auto;
+    margin-top: 2vh;
+
+}
+
+
+#navDetails {
+
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    margin-top: 1vh;
+
+    /* border: 1px solid black; */
+}
+
+.mt-10 {
+    margin-top: 13px;
+}
+
+.sticky {
+    position: fixed;
+    top: -15px;
+    width: 100%;
+    z-index: 100;
+}
+
+#navDetails a {
+    text-decoration: none;
+    color: #252525;
+}
+
+
+
+/* left nav starts here */
+#navLeft {
+    width: 72%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+#category {
+    width: 18%;
+    font-weight: bold;
+    font-size: 0.8rem;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    align-items: center;
+    /* border: 1px solid black; */
+}
+
+#category img {
+    height: 18px;
+}
+
+#category a {
+    margin-bottom: -16px;
+}
+
+#test {
+    width: 76%;
+    display: flex;
+    justify-content: space-between;
+
+    /* border: 1px solid black; */
+}
+
+#test input {
+    width: 95%;
+    border: none;
+    outline: 0;
+    /* border: 1px solid black; */
+}
+
+#test img {
+    height: 18px;
+    margin: auto;
+}
+
+#test, #category {
+    border: 1px solid #cecece;
+    border-radius: 3.5px;
+    padding: 4px;
+}
+
+/* left nav ends here */
+
+/* right nav starts here */
+#cart img, #order img, #user img {
+    height: 20px;
+    margin: auto;
+}
+
+
+#order, #cart, #user {
+    font-size: 0.85rem;
+}
+
+#userOptions {
+    width: 26%;
+    display: flex;
+    justify-content: space-around;
+    /* border: 1px solid red; */
+}
+
+#order, #cart, #user {
+    display: flex;
+    width: 22%;
+    justify-content: space-evenly;
+    text-align: center;
+    cursor: pointer;
+    /* border: 1px solid rgb(104, 71, 71);  */
+}
+
+
+@media screen and (max-width:1100px) {
+    #category {
+        width: 24%;
+        font-size: .75rem;
+        position: relative;
+        left: -16%;
+    }
+
+    #test {
+        position: relative;
+        right: -16%;
+    }
+
+    .none {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hidden {
+        visibility: hidden;
+    }
+
+    #userOptions {
+        flex-direction: column;
+        margin-top: 50px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0px;
+        top: 27px;
+        background-color: white;
+    }
+}
+
+@media screen and (max-width:700px) {
+    #category {
+        width: 40%;
+        font-size: .6rem;
+    }
+
+    #test {
+        width: 100%;
+    }
+
+    #test input {
+        width: 100%;
+    }
+
+    #test input::placeholder {
+        font-size: .75rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    #test input::placeholder {
+        visibility: hidden;
+    }
+
+    #category {
+        width: 70%;
+    }
+}
+
+
+
+
+
+/* right nav ends here */
+
+/* navbar ends here */
+
+
+/* main container starts here */
+
+/* main container ends here */
+
+
+/*media queries starts here */

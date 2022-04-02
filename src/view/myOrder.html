@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Orders</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="logo/favicon.png" />
+    <link rel="stylesheet" href="styles/navbar.css" />
+    <link rel="stylesheet" href="styles/nav2.css" />
+    <link rel="stylesheet" href="styles/orders.css" />
+    <link rel="stylesheet" href="styles/footer_ques.css" />
+</head>
+
+<body>
+    <nav id="nav"></nav>
+    <div class="order">
+        <h2>My Orders</h2>
+        <div class="secNav">
+            <div class="items">
+                <p class="shop">Shopping Orders</p>
+                <p class="deal">Deals</p>
+            </div>
+        </div>
+        <div id="deal">fsfs</div>
+        <div id="shopping"></div>
+    </div>
+    <footer id="footer"></footer>
+</body>
+
+</html>
+
+<!-- image :"https://assetscdn1.paytm.com/images/catalog/product/A/AP/APPMOTUS-SOLI..."
+brand : "Adidas" name : "Men Solid Regular Shorts Pack Of 3" price : "879"
+stPrice : "1299" 
+discount : "32%" 
+size : "M" 
+createdAt :
+2022-03-30T12:42:15.934+00:00 updatedAt : 2022-03-30T12:42:15.934+00:00 
+category
+: "Men" -->
+
+<script type="module">
+    import { navbar } from "./components/navbar.js";
+    import { footer } from "./components/footer.js";
+    import { cookies } from "./components/cookies.js"
+    let nav = document.getElementById("nav");
+    nav.innerHTML = navbar();
+
+    let foot = document.getElementById("footer");
+    foot.innerHTML = footer();
+
+    let shop = document.querySelector(".shop");
+    let deal = document.querySelector(".deal");
+
+
+    //******************
+    // it is used for disPlay the name on the navbar 
+    const disPlayName = async () => {
+        let userName = document.querySelector("#u-name")
+        let subArr = cookies("token")
+        if (subArr == undefined) {
+            userName.textContent = "Login/SignUp"
+        }
+        else {
+            let res = await fetch("http://localhost:5901/user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    // Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${subArr}`,
+                },
+            });
+            let data = await res.json()
+            // console.log(data)
+
+
+            userName.textContent = data.name
+            return data
+        }
+
+    }
+    let unknown = disPlayName()
+    //******************** go to my order page *******************//
+    const goToOrder = async () => {
+        let data = await disPlayName()
+        if (!data) {
+            alert("please sign in")
+            window.location.href = "qrsign.html"
+        }
+        else {
+            window.location.href = "myOrder.html"
+        }
+    }
+    document.getElementById("order").addEventListener("click", goToOrder)
+    //*********************************************************
+
+    shop.addEventListener("click", () => {
+
+        document.getElementById('deal').style.display = "none"
+        document.getElementById('shopping').style.display = "flex"
+        shop.style.color = "red"
+        deal.style.color = "black"
+    });
+    deal.addEventListener("click", () => {
+
+        document.getElementById('shopping').style.display = "none"
+        document.getElementById('deal').style.display = "flex"
+        shop.style.color = "black"
+        deal.style.color = "red"
+    });
+</script>
+<script src="scripts/orders.js"></script>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paytmmall.com: Speedo Vouchers</title>
+    <link rel="icon" href="logo/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/product.css">
+
+    <!-- css for footer section  -->
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/nav2.css">
+    <link rel="stylesheet" href="styles/footer_ques.css">
+    <link rel="stylesheet" href="styles/all.min.css">
+
+    <style>
+
+    </style>
+
+</head>
+
+<body>
+
+    <div id="nav">
+
+    </div>
+
+    <div id="product_body">
+        <div id="top_path">
+            <div>Home / Deals Store / <span style="color: black;">Gift Vouchers</span></div>
+        </div>
+
+        <div id="product_container">
+            <div id="product_filter">
+                <div id="filter_category">
+                    <i class="fa fa-chevron-left" style="font-size:16px"></i>
+                    Deals For you
+                </div>
+                <div class="bold">
+                    <i class="fa fa-chevron-left" style="font-size:16px"></i>
+                    Fashion
+                </div>
+
+                <div class="price-range-slider">
+
+
+                    <div id="slider-range" class="range-bar">
+
+                    </div>
+                    <div id="rangevalue">
+                        <p class="range-value">
+                            <input type="text" id="amount" readonly>
+                        <div id="pricevalue"></div>
+                        </p>
+                    </div>
+                </div>
+
+                <div id="brands_title">
+                    <div class="bold">Brands</div>
+                    <div style="font-size:24px; color: gray;font-weight: 100;">-</div>
+                </div>
+                <div>
+                    <div id="vendor">
+                        <div id="button1"><input type="checkbox" ;></div>
+                        <div id="vendor_name">Vouchers</div>
+                        <div id="item_count"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="product_sort_products">
+                <div id="product_sort">
+                    <div><span class="bold" style="color: gray;" id="total"></span></div>
+                    <div>
+                        <select id="sort" onchange="sortData()">
+                            <option value='1'>Sort by Popular</option>
+                            <option value='ltoh'>Low To High Price</option>
+                            <option value='htol'>High To Low Price</option>
+
+                        </select>
+                    </div>
+
+
+                </div>
+                <div id="product_products">
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div id="foot"></div>
+</body>
+
+<script type="text/javascript" src="product.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="https://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
+<script>
+    $("#slider-range").slider({
+        orientation: "horizontal",
+        range: true,
+        min: 250,
+        max: 60000,
+        values: [500, 50000],
+        step: 1,
+        animate: true,
+        slide: function (event, ui) {
+            $("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
+        }
+    });
+</script>
+<script src="scripts/product.js"></script>
+<script type="module">
+
+    import { navbar } from "./components/navbar.js"
+    import { cookies } from "./components/cookies.js"
+    let nav = document.getElementById("nav")
+    nav.innerHTML = navbar()
+
+    let Total = JSON.parse(localStorage.getItem("totalCart"))
+    if (Total) {
+        document.getElementById("totalPrice").textContent = Total
+    }
+
+    document.getElementById("totalPrice").addEventListener("click", () => {
+        window.location.href = "cartPage.html"
+    })
+
+
+    import { footer } from "./components/footer.js"
+    let foot1 = document.getElementById("foot")
+    foot1.innerHTML = footer()
+
+
+    // it is used for disPlay the name on the navbar 
+    const disPlayName = async () => {
+        let userName = document.querySelector("#u-name")
+        let subArr = cookies("token")
+        if (subArr == undefined) {
+            userName.textContent = "Login/SignUp"
+        }
+        else {
+            let res = await fetch("http://localhost:5901/user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    // Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${subArr}`,
+                },
+            });
+            let data = await res.json()
+            // console.log(data)
+
+
+            userName.textContent = data.name
+            return data
+        }
+
+    }
+    let unknown = disPlayName()
+    //******************** go to my order page *******************//
+    const goToOrder = async () => {
+        let data = await disPlayName()
+        if (!data) {
+            alert("please sign in")
+            window.location.href = "/qrsign.html"
+        }
+        else {
+            window.location.href = "/myOrder.html"
+        }
+    }
+    document.getElementById("order").addEventListener("click", goToOrder)
+    //*********************************************************
+</script>
+
+</html>

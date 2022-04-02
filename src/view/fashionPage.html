@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Fashion</title>
+    <link rel="icon" href="logo/favicon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/fashionPage.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/nav2.css">
+    <link rel="stylesheet" href="styles/footer_ques.css">
+</head>
+
+<body>
+    <div id="nav">
+
+    </div>
+
+    <p id="main">Home / Men's Fashion /<span class="bold"> Men Clothing </span></p>
+    <div class="container">
+        <div class="left">
+            <h3>Fashion's</h3>
+            <p>Running shoes</p>
+            <p>Sleeper</p>
+            <p>fliper</p>
+            <p>T-shirts</p>
+            <p>Trouser</p>
+            <p>Chinos</p>
+            <hr>
+            <select name="" onchange="filter()" id="brand">
+                <option value="">Select by brand</option>
+                <option value="Adidas">ADIDAS</option>
+                <option value="Reebok">REEBOK</option>
+            </select>
+        </div>
+        <div class="right">
+            <div id="sortSide">
+                <div></div>
+                <div> <select name="" onchange="sort()" id="select">
+                        <option value="">Sort by Price</option>
+                        <option value="asse">Low to High</option>
+                        <option value="desce">High to Low</option>
+                    </select></div>
+            </div>
+            <div id="product"></div>
+        </div>
+    </div>
+    <div id="footer"></div>
+</body>
+
+</html>
+
+<script src="scripts/fashionPage.js"></script>
+<script type="module">
+
+    import { navbar } from "./components/navbar.js"
+
+    import { footer } from "./components/footer.js"
+
+    import { cookies } from "./components/cookies.js"
+    let nav = document.getElementById("nav")
+    nav.innerHTML = navbar()
+
+
+
+    let foot = document.getElementById("footer")
+    foot.innerHTML = footer()
+
+
+    let Total = JSON.parse(localStorage.getItem("totalCart"))
+    if (Total) {
+        document.getElementById("totalPrice").textContent = Total
+    }
+
+    document.getElementById("totalPrice").addEventListener("click", () => {
+        window.location.href = "cartPage.html"
+    })
+
+
+
+
+    //***********************************************
+
+    // it is used for disPlay the name on the navbar 
+    const disPlayName = async () => {
+        let userName = document.querySelector("#u-name")
+        let subArr = cookies("token")
+        if (subArr == undefined) {
+            userName.textContent = "Login/SignUp"
+        }
+        else {
+            let res = await fetch("http://localhost:5901/user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    // Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${subArr}`,
+                },
+            });
+            let data = await res.json()
+            // console.log(data)
+
+
+            userName.textContent = data.name
+            return data
+        }
+
+    }
+    let unknown = disPlayName()
+    //******************** go to my order page *******************//
+    const goToOrder = async () => {
+        let data = await disPlayName()
+        if (!data) {
+            alert("please sign in")
+            window.location.href = "qrsign.html"
+        }
+        else {
+            window.location.href = "myOrder.html"
+        }
+    }
+    document.getElementById("order").addEventListener("click", goToOrder)
+    //*********************************************************
+</script>

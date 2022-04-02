@@ -1,0 +1,75 @@
+body{
+    margin: 0;
+    padding: 0;
+   background-image: url(/logo/sign-bg.png);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+    z-index: 1;
+
+
+}
+
+.body{
+    height: 100vh;
+    padding-top: 50px;
+    opacity: 0.86;
+    width: 100%;
+    background-color: black;
+}
+
+
+#container{
+    width: 25%;
+    margin: 100px auto;
+    border:  2px solid #ff6205;
+    border-radius: 10px;
+    padding: 20px 20px;
+    background: nones;
+    height: auto;
+ 
+}
+#container label{
+    color: #ff6205;
+}
+#container input{
+    border: none;
+    border-bottom: 2px solid #ff6205;
+    margin-top: -10px;
+    background: none;
+    color: white;
+    
+}
+h3{
+    color: #ff6205;
+    border-bottom: 4px solid #ff6205;
+    width: 150px;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 20%;
+    margin-top: -20%;
+}
+textarea{
+    background: black;
+}
+button{
+    font-weight: bold;
+    width: 30%;
+   margin: auto;
+   margin-top: 10%;
+   margin-bottom: 5%;
+}
+   
+.btn{
+    background-color: #fd7e14;
+}
+
+p{
+    color: #ff6205;
+}
+#flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    margin-top: 20%;
+}

@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+
+  background-image: url(/logo/sign-bg.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  /* box-sizing: border-box; */
+  overflow-x: hidden;
+  background-color: black;
+}
+
+.body {
+  background-color: black;
+  opacity: 0.86;
+  height: 100%;
+  width: 100%;
+  padding: 50px 0px;
+}
+
+#container {
+  width: 30%;
+  margin: auto;
+  border: 2px solid #0dcaf0;
+  border-radius: 10px;
+  padding: 20px 20px;
+  background: none;
+}
+#container label {
+  color: #0dcaf0;
+}
+#container input {
+  border: none;
+  border-bottom: 2px solid #0dcaf0;
+  margin-top: -10px;
+  background: none;
+  color: white;
+}
+h3 {
+  color: #0dcaf0;
+  border-bottom: 4px solid #0dcaf0;
+  width: 150px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 10px;
+}
+textarea {
+  background: black;
+}
+button {
+  font-weight: 700;
+  color: black;
+}
+p {
+  color: #0dcaf0;
+}
+
+@media screen and (max-width: 800px) {
+  #container {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  #container {
+    width: 60%;
+  }
+}
+@media screen and (max-width: 350px) {
+  #container {
+    width: 85%;
+  }
+}
