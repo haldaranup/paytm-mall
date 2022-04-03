@@ -68,4 +68,5 @@ https://paytm-mall-masai.netlify.app
 ## Screenshots :- 
 ## For more details :- ![frontpage]() -->
 
-[Blog]()
+## For more details, here is our blog
+[Blog](https://haldaranup.medium.com/working-with-back-end-on-paytm-mall-website-1df443c3e5c7)
