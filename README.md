@@ -1,7 +1,7 @@
-# paytm-mall
+# Paytm-mall
 
 
-![Paytm-mall]()
+<!-- ![Paytm-mall]() -->
 
 
 # Welcome :wave:
@@ -64,8 +64,8 @@ https://paytm-mall-masai.netlify.app
 - After payment has completed successfully then he will be redirected to home page.
 
 
-
+<!-- 
 ## Screenshots :- 
-## For more details :- ![frontpage]()
+## For more details :- ![frontpage]() -->
 
 [Blog]()
