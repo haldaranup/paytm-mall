@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment</title>
+    <link rel="icon" href="logo/favicon.png" />
+    <link rel="icon" href="assets/logo/favicon.png" />
+    <link rel="stylesheet" href="styles/payment.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/nav2.css">
+    <link rel="stylesheet" href="styles/footer_ques.css">
+
+</head>
+
+<body>
+    <div id="nav"></div>
+    <div id="main">
+        <div class="container">
+            <div class="logo">
+                <a href=""><img src="assets/logo/paytmLogo.png" alt=""></a>
+            </div>
+            <div class="option">
+                <p>Select an option to pay</p>
+                <p id="pay"></p>
+            </div>
+
+            <div class="firstOption">
+                <div>
+                    <input type="checkbox">
+                    <p>Paytm Balance</p>
+                    <p><img src="https://cdn-icons-png.flaticon.com/128/1138/1138038.png" alt=""></p>
+                </div>
+
+                <div class="bank">
+                    <input type="radio" name="bank">
+                    <p>Kotak Mahindra Bank</p>
+                    <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROZ5fp-F79T-sSgmFGTMsBXGJc3wBW5_yuNw&usqp=CAU"
+                            alt=""></p>
+
+                    <input type="radio" name="bank">
+                    <p>Axis Bank</p>
+                    <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2YMdZKifTY9zTNErGtpUm_cAEiUbiW4etgw&usqp=CAU"
+                            alt=""></p>
+
+                    <input type="radio" name="bank">
+                    <p>State Bank Of India</p>
+                    <p><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvSJsOmuBA0syCgQq2-ZwZmY33gWH04OolPg&usqp=CAU"
+                            alt=""></p>
+                </div>
+
+
+
+            </div>
+
+
+            <div class="firstOption">
+                <div class="cardDetails">
+                    <p>Enter your card number</p>
+                    <input id="card" type="text">
+                </div>
+                <button>Pay Now</button>
+            </div>
+
+
+        </div>
+
+    </div>
+    <div id="footer">
+
+    </div>
+
+</body>
+
+</html>
+
+
+
+
+
+<script src="scripts/payments.js"></script>
+<script type="module">
+
+    import { navbar } from "./components/navbar.js"
+
+    import { footer } from "./components/footer.js"
+    import { cookies } from "./components/cookies.js"
+
+    let nav = document.getElementById("nav")
+    nav.innerHTML = navbar()
+
+    let Total = JSON.parse(localStorage.getItem("totalCart"))
+    if (Total) {
+        document.getElementById("totalPrice").textContent = Total
+    }
+
+    document.getElementById("totalPrice").addEventListener("click", () => {
+        window.location.href = "cartPage.html"
+    })
+
+
+    let foot = document.getElementById("footer")
+    foot.innerHTML = footer()
+
+
+    //***********************************************
+
+    // it is used for disPlay the name on the navbar 
+    const disPlayName = async () => {
+        let userName = document.querySelector("#u-name")
+        let subArr = cookies("token")
+        if (subArr == undefined) {
+            userName.textContent = "Login/SignUp"
+        }
+        else {
+            let res = await fetch("http://localhost:5901/user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    // Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${subArr}`,
+                },
+            });
+            let data = await res.json()
+            // console.log(data)
+
+
+            userName.textContent = data.name
+            return data
+        }
+
+    }
+    let unknown = disPlayName()
+
+    //******************** go to my order page *******************//
+    const goToOrder = async () => {
+        let data = await disPlayName()
+        if (!data) {
+            alert("please sign in")
+            window.location.href = "qrsign.html"
+        }
+        else {
+            window.location.href = "myOrder.html"
+        }
+    }
+    document.getElementById("order").addEventListener("click", goToOrder)
+    //*********************************************************
+
+
+
+
+</script>

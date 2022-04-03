@@ -1,0 +1,124 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: black;
+}
+
+#forminp {
+    /* border: 2px blue solid; */
+    padding: 3px;
+    width: 30%;
+    margin: auto;
+    margin-top: 50px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    /* background-color: rgb(245, 237, 223); */
+
+}
+
+#fship {
+    margin: 0px;
+    /* margin: aut; */
+    /* border: 2px blue solid; */
+    padding: 30px;
+}
+
+.ship_det {
+    font-size: 25px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: orange;
+    /* border-bottom: 1px solid orange; */
+    text-align: center;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 70%;
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+input {
+    border: none;
+    outline: none;
+
+    border-bottom: 1px solid orange;
+    /* width: 100%; */
+    /* background: none; */
+    color: white;
+    font-size: 1em;
+
+}
+
+#country {
+    height: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: -10px;
+}
+
+label {
+    color: orange;
+}
+
+#ship_add {
+    margin-left: 20%;
+    margin-top: 15%;
+    margin-bottom: 5%;
+    font-weight: bold;
+    /* border: 1px solid rgb(242,242,242); */
+    padding: 10px;
+    height: 30%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#form {
+    width: 500px;
+    height: 300px;
+    border: 1px solid red;
+    font-size: 14px;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    margin-left: 200px;
+}
+
+#form p {
+    margin-bottom: 0px;
+}
+
+
+
+#form input {
+    height: 25px;
+    margin-top: 10px;
+}
+
+
+#change {
+    width: 40%;
+    margin: auto;
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding: 5px;
+    border: 1px solid orange;
+    color: orange;
+    text-align: center;
+    cursor: pointer;
+}
+
+#change:hover {
+    background-color: orange;
+    color: white;
+    font-weight: bold;
+}
+
+#form h4 {
+    margin-bottom: 10px;
+}

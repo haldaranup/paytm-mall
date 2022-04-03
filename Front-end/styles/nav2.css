@@ -1,0 +1,19 @@
+#mainLogo>a img{
+    height: 25px;
+    position: absolute;
+    top: 70px;
+    left: 10px;
+}
+#category{
+    width: 15%;
+    margin-left: 80px;
+}
+#nav #category p{
+    margin-top: -16px;
+}
+#nav {
+    position: sticky;
+    z-index: 100;
+    background-color: white;
+    top: 0px;
+}

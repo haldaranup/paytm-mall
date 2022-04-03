@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" href="logo/favicon.png" />
+
+    <link rel="stylesheet" href="styles/cartPage.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/nav2.css">
+    <!-- <link rel="stylesheet" href="styles/footer_ques.css"> -->
+    <link rel="stylesheet" href="styles/all.min.css">
+
+</head>
+
+<body>
+
+    <div id="nav">
+
+    </div>
+
+    <div id="container">
+
+    </div>
+    <div id="payment">
+        <div>
+            <p>Bag Total</p>
+            <h3><span>₹ </span> <span id="bag_price"></span></h3>
+        </div>
+        <div>
+            <p>Shipping Charge</p>
+            <p class="green">Free</p>
+        </div>
+        <div>
+            <h3>Amount Payable</h3>
+            <h3><span>₹ </span> <span id="total"></span></h3>
+        </div>
+        <button id="pay">Proceed payment</button>
+    </div>
+
+
+
+</body>
+
+</html>
+<script type="module">
+    import { navbar } from "./components/navbar.js"
+    import { cookies } from "./components/cookies.js"
+
+
+
+    let nav = document.getElementById("nav")
+    nav.innerHTML = navbar()
+
+
+
+    let Total = JSON.parse(localStorage.getItem("totalCart"))
+    if (Total) {
+        document.getElementById("totalPrice").textContent = Total
+    }
+
+    document.getElementById("totalPrice").addEventListener("click", () => {
+        window.location.href = "cartPage.html"
+    })
+
+
+
+
+
+
+
+    //***********************************************
+
+    //******************
+    // it is used for disPlay the name on the navbar 
+    const disPlayName = async () => {
+        let userName = document.querySelector("#u-name")
+        let subArr = cookies("token")
+        if (subArr == undefined) {
+            userName.textContent = "Login/SignUp"
+        }
+        else {
+            let res = await fetch("http://localhost:5901/user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    // Authorization: `Bearer ${token}`,
+                    Authorization: `Bearer ${subArr}`,
+                },
+            });
+            let data = await res.json()
+            // console.log(data)
+
+
+            userName.textContent = data.name
+            return data
+        }
+
+    }
+    let unknown = disPlayName()
+    //******************** go to my order page *******************//
+    const goToOrder = async () => {
+        let data = await disPlayName()
+        if (!data) {
+            alert("please sign in")
+            window.location.href = "qrsign.html"
+        }
+        else {
+            window.location.href = "myOrder.html"
+        }
+    }
+    document.getElementById("order").addEventListener("click", goToOrder)
+    //*********************************************************
+</script>
+<script src="scripts/cartPage.js"></script>

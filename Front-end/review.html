@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review & Feedback| Paytm Mall</title>
+    <link rel="icon" href="logo/favicon.png" />
+    <link rel="stylesheet" href="styles/review.css">
+    <script src="https://use.fontawesome.com/a6f0361695.js"></script>
+    <script src="https://kit.fontawesome.com/629044acfa.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <hr class="header" />
+
+    </div>
+    <img src="logo/mainLogo.png" id="logo" alt="">
+    <h2 id="fh2">WE VALUE YOUR REVIEW!</h2>
+    <h6 id="fh6">Your review will help Paytm Mall to improve our web hosting quality products, and
+        customer services.</h6>
+
+
+    <form id="feedback" action="">
+        <div class="pinfo">Your personal info</div>
+
+        <div class="form-group">
+            <div class="cont_class">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                    <input name="name" placeholder="John Dee" id="name" class="form-control" type="text">
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="cont_class">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                    <input name="email" type="email" id="email" class="form-control" placeholder="john.doe@yahoo.com">
+                </div>
+            </div>
+        </div>
+
+        <!-- <div class="form-group">
+            <div class="cont_class">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-globe"></i></span>
+                    <input name="URL" placeholder="https://google.com" class="form-control" type="url">
+                </div>
+            </div>
+        </div> -->
+
+        <div class="pinfo">Rate our overall services.</div>
+
+
+        <div class="form-group">
+            <div class="cont_class">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-heart"></i></span>
+                    <select class="form-control" id="rate">
+                        <option value="1star">1</option>
+                        <option value="2stars">2</option>
+                        <option value="3stars">3</option>
+                        <option value="4stars">4</option>
+                        <option value="5stars">5</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div class="pinfo">Write your feedback.</div>
+
+
+        <div class="form-group">
+            <div class="cont_class">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                    <textarea class="form-control" id="review" rows="3"></textarea>
+
+                </div>
+            </div>
+        </div>
+
+        <button id="change" type="submit" class="btn btn-primary">Submit</button>
+
+
+    </form>
+
+    <img src="https://thumbs.dreamstime.com/b/thank-you-10840728.jpg" class="main-card" alt="">
+
+
+</body>
+
+</html>
+
+<script>
+    document.querySelector("#change").addEventListener("click", function (ele) {
+        ele.preventDefault()
+        let name = document.getElementById("name").value
+        let email = document.getElementById("email").value
+        let review = document.getElementById("rate").value
+        let feedback = document.getElementById("review").value
+
+        if (name != "" && email != "" && review != "" && feedback != "") {
+
+            setTimeout(() => {
+                let card = document.querySelector(".main-card")
+                card.style.display = "block"
+            }, 1000)
+            setTimeout(() => {
+                window.location.href = "index.html"
+            }, 3000)
+        }
+        else {
+            alert("please fill the form")
+        }
+
+    });
+</script>

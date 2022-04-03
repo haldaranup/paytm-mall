@@ -1,0 +1,95 @@
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+
+#product_body {
+    background-color: rgb(244, 247, 247);
+    margin-left: 40px;
+    margin-right: 30px;
+    height: 650px;
+    min-width: 650px;
+    
+}
+
+#top_path {
+    color: gray;
+    height: 51px;
+    font-size: 17px;
+}
+
+#top_path>div {
+    padding-top: 17px;
+}
+
+#pdt_description{
+    font-weight: 500;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    width:70%;
+    background-color: white;
+    display: flex;
+    /* overflow: hidden; */
+    justify-content: space-around;
+    margin-left: 20px;
+    height: auto;
+    /* border: 1px solid red; */
+
+}
+
+#pdt_image{
+    width: 40%;
+    padding:20px;
+}
+
+#mrp{
+    color: black;
+}
+
+#MRP{
+    font-weight: bold;
+    font-size: 1.4em;
+    margin-left: 5px;
+}
+#name{
+    font-size: 1.6em;
+}
+
+#mrpfooter{
+    font-size: 0.7em;
+    
+    color: grey;
+}
+#quantity{
+    border: none;
+    margin: 40px 0px;
+    padding: 5px;
+    width: 60%;
+    border-bottom: 1px solid black;
+}
+ul{
+    margin-top: 20px;
+}
+li{
+    line-height: 30px;
+    font-size: 0.8em;
+    color: grey;
+}
+
+button{
+    margin-top: 10px;
+    border: none;
+    width: 100%;
+    text-align: center;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   font-size: 1.2em;
+    color: white;
+    font-weight: bold;
+    background-color: orangered;
+    align-self: flex-end;
+    cursor: pointer;
+}
