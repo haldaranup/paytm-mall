@@ -1,7 +1,7 @@
 # paytm-mall
 
 
-![Adidas](https://user-images.githubusercontent.com/95961486/158548097-5dca4d42-b32f-4691-a7d8-d77fade3580e.png)
+![Paytm-mall]()
 
 
 # Welcome :wave:
@@ -15,19 +15,16 @@
 ## Run Locally :-
 ``git clone https://github.com/haldaranup/paytm-mall.git``
 
-## Go to project directory:- 
-`cd paytm-mall`
 
 
 ## deployment Link:-
 https://paytm-mall-masai.netlify.app
 
 ## Contributers :- 
-- #### [Unnati](https://www.linkedin.com/in/unnati-gandhi-122212230/)
+- #### [Sagar](https://www.linkedin.com/in//)
 - #### [Anup Haldar](https://www.linkedin.com/in/haldar-anup/)
-- #### [Ankush Gupta](https://www.linkedin.com/in/ankush-gupta-41097/)
-- #### [Triveniprasad Gupta](https://www.linkedin.com/in/trivenigupta/)
-- #### [Rahul Kishore](https://www.linkedin.com/in/rahul-kishore-48835b223/)
+- #### [Rahul Yadav](https://www.linkedin.com/in//)
+
 
 
 ## Tech Stack :- 
