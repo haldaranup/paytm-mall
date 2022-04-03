@@ -21,9 +21,9 @@
 https://paytm-mall-masai.netlify.app
 
 ## Contributers :- 
-- #### [Sagar](https://www.linkedin.com/in//)
+- #### [Sagar](https://www.linkedin.com/in/sagar-pradhan16/)
 - #### [Anup Haldar](https://www.linkedin.com/in/haldar-anup/)
-- #### [Rahul Yadav](https://www.linkedin.com/in//)
+- #### [Rahul Yadav](https://www.linkedin.com/in/mrah100/)
 
 
 
