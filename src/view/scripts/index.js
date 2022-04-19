@@ -22,7 +22,7 @@ const appendData = async (parent, start, end) => {
         // localStorage.setItem("coupon", JSON.stringify(data[i].name));
 
         document.cookie = "couponName=" + data[i].name;
-        window.location.href = "/product.html";
+        window.location.href = "./product.html";
       });
 
       let image = document.createElement("img");
@@ -66,7 +66,7 @@ const appendDataSpecial = async (parent, start, end) => {
         // localStorage.setItem("coupon", JSON.stringify(data[i].name));
         console.log(data[i].name);
         document.cookie = "couponName=" + data[i].name;
-        window.location.href = "/product.html";
+        window.location.href = "./product.html";
       });
 
       let image = document.createElement("img");
