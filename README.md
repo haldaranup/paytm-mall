@@ -1,7 +1,7 @@
 # Paytm-mall
 
 
-<!-- ![Paytm-mall]() -->
+![Paytm-mall](/src/assets/homepage.png)
 
 
 # Welcome :wave:
@@ -10,14 +10,14 @@
 
 > Paytm mall is a platform provided by Paytm for user to shop, it works just like any other E-Commerce website or Application. The main objective of this website is to give extra discounts to the users
 
-# About this project ⏬
-
 ## Run Locally :-
-``git clone https://github.com/haldaranup/paytm-mall.git``
+```bash
+git clone https://github.com/haldaranup/paytm-mall.git
+```
 
 
 
-## deployment Link:-
+## Deployment Link:-
 https://paytm-mall-masai.netlify.app
 
 ## Contributers :- 
@@ -64,9 +64,10 @@ https://paytm-mall-masai.netlify.app
 - After payment has completed successfully then he will be redirected to home page.
 
 
-<!-- 
+
 ## Screenshots :- 
-## For more details :- ![frontpage]() -->
+![Paytm-mall](/src/assets/homepage.png)
+![items](/src/assets/items.png)
 
 ## For more details, here is our blog
 [Blog](https://haldaranup.medium.com/working-with-back-end-on-paytm-mall-website-1df443c3e5c7)
