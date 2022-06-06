@@ -1,7 +1,4 @@
-# Paytm-mall
 
-
-![Paytm-mall](/src/assets/homepage.png)
 
 
 # Welcome :wave:
@@ -9,6 +6,11 @@
 ### About Paytm-mall:
 
 > Paytm mall is a platform provided by Paytm for user to shop, it works just like any other E-Commerce website or Application. The main objective of this website is to give extra discounts to the users
+
+# Paytm-mall
+
+
+![Paytm-mall](/src/assets/homepage.png)
 
 ## Run Locally :-
 ```bash
